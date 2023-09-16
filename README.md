@@ -4,7 +4,7 @@
 
 <p align='center'>The script is heavily configurable and has features such as progress bars, animations & props, etc.</p>
 
-<h1 align='center'> ### Installing this to your server.</h1>
+<h1 align='center'> Installing this to your server.</h1>
 
 <p align='center'>
   <strong>1.</strong> Download this repository and add the script to your resources folder.<br>
@@ -13,7 +13,7 @@
   <strong>4.</strong> Once you have completed those steps, the script is ready to be used simply restart your server and you are good to go!<br>
 </p>
 
-### Adding the item to OX Inventory
+<h1 align='center'> Adding the item to OX Inventory.</h1>
 
 <p align='center'>
   <strong>1.</strong> Navigate to your ox_inventory folder and open it, then open the data folder and finally open <code>items.lua</code>.<br>
