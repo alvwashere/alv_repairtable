@@ -4,7 +4,7 @@
 
 <p align='center'>The script is heavily configurable and has features such as progress bars, animations & props, etc.</p>
 
-### Installing this to your server.
+<h1 align='center'> ### Installing this to your server.</h1>
 
 <p align='center'>
   <strong>1.</strong> Download this repository and add the script to your resources folder.<br>
