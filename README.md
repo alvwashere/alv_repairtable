@@ -21,4 +21,4 @@
   <strong>3.</strong> Save the file and restart your server, the item is now added to your server.<br>
 </p>
 
-<strong><p align='center'>If you are looking for a Developer with over 3 years of experience on FiveM, feel free to join my <a href='https://discord.gg/alv'>Discord Server</a> or my <a href='https://alv.gg'>Website</a>!</p></strong>
+<strong><p align='center'>If you are looking for a Developer with over 3 years of experience on FiveM, feel free to join my <a href='https://discord.gg/alv'>Discord Server</a> or visit my <a href='https://alv.gg'>Website</a>!</p></strong>
