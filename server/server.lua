@@ -1,5 +1,19 @@
 local ox_inventory = exports.ox_inventory
 
+lib.callback.register('alv_repairtable:canUse', function(source, cb)
+    local xPlayer = ESX.GetPlayerFromId(source)
+
+    for k, v in pairs(Config.RepairLocations) do
+        if #(v.Location - GetEntityCoords(GetPlayerPed(source))) < 2.0 then
+            if v.Jobs and type(v.Jobs == 'table') and v.Jobs[xPlayer.getJob().name] then
+                return true
+            end
+        end
+    end
+
+    return false
+end)
+
 lib.callback.register('alv_repairtable:getLoadout', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
 
