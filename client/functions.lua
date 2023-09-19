@@ -55,8 +55,8 @@ function BeginRepair(slot)
             car = true,
         },
         anim = {
-            dict = 'anim@heists@prison_heiststation@cop_reactions',
-            clip = 'cop_b_idle'
+            dict = Config.Repairing.Fixing.AnimDict,
+            clip = Config.Repairing.Fixing.AnimClip
         },
     }) then 
         if lib.progressBar({
@@ -68,8 +68,8 @@ function BeginRepair(slot)
                 car = true,
             },
             anim = {
-                dict = 'timetable@floyd@clean_kitchen@base',
-                clip = 'base'
+                dict = Config.Repairing.Cleaning.AnimDict,
+                clip = Config.Repairing.Cleaning.AnimClip
             },
         }) then 
             lib.callback('alv_repairtable:repairGun', cache.serverId, function(success)
