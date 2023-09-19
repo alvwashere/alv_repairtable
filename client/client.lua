@@ -30,20 +30,26 @@ RegisterCommand('repair_bench', function()
         end
     end
 
-    local loadout = lib.callback.await('alv_repairtable:getLoadout', false)
+    local allowed = lib.callback.await('alv_repairtable:canUse', false)
 
-    for k, v in pairs(loadout) do
-        if string.find(v.name, 'WEAPON_') then
-            Weapons[#Weapons+1] = {label=v.label, description='Repair '..v.label..' with '..v.metadata.durability..'% durability left.', args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+    if allowed then
+        local loadout = lib.callback.await('alv_repairtable:getLoadout', false)
+
+        for k, v in pairs(loadout) do
+            if string.find(v.name, 'WEAPON_') then
+                Weapons[#Weapons+1] = {label=v.label, description='Repair '..v.label..' with '..v.metadata.durability..'% durability left.', args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+            end
         end
-    end
 
-    if #Weapons > 0 then
-        DebugPrint(json.encode(Weapons, {indent=true}))
+        if #Weapons > 0 then
+            DebugPrint(json.encode(Weapons, {indent=true}))
 
-        BeginMenu(Weapons)
+            BeginMenu(Weapons)
+        else
+            ESX.ShowNotification('You do not have any weapons.')
+        end
     else
-        ESX.ShowNotification('You do not have any weapons.')
+        ESX.ShowNotification('You cannot use this table as you do not have the correct job.')
     end
 end)
 
