@@ -3,6 +3,11 @@ Config = {}
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.Duration = 600 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
 
+Config.Framework = {
+    Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
+    Name = 'es_extended', --[[ Name of your frameworks core resource for the export. ]]--
+}
+
 Config.RepairLocations = {
     [1] = {
         Location = vec3(-97.6829, -1791.9990, 26.9096), -- The coordinates for the bench (vector3)
