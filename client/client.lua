@@ -48,10 +48,10 @@ RegisterCommand('repair_bench', function()
 
             BeginMenu(Weapons)
         else
-            ESX.ShowNotification(locale('no_weapons'))
+            Notify('no_weapons')
         end
     else
-        ESX.ShowNotification(locale('no_job'))
+        Notify('no_job')
     end
 end)
 
