@@ -13,24 +13,15 @@ lib.callback.register('alv_repairtable:canUse', function(source, cb)
 end)
 
 lib.callback.register('alv_repairtable:getLoadout', function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    return xPlayer.getInventory()
+    return GetLoadout(source)
 end)
 
 lib.callback.register('alv_repairtable:getMetal', function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    return xPlayer.getInventoryItem(Config.MetalItem).count
+    return GetItem(source)
 end)
 
 lib.callback.register('alv_repairtable:removeMetal', function(source, count)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    if xPlayer.getInventoryItem(Config.MetalItem).count >= count then
-        xPlayer.removeInventoryItem(Config.MetalItem, count)
-        return true
-    end
+    RemoveItem(source, count)
 end)
 
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
