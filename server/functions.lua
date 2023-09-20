@@ -17,5 +17,9 @@ function GetLoadout(source)
 end
 
 function GetItem(source)
-  -- no longer need framework support as the script only support ox_inventory, may as well just check count using ox_inventory functions (to follow)
+  -- no longer need framework support as the script only support ox_inventory, may as well just return loadout using ox_inventory functions (to follow)
+end
+
+function RemoveItem(source, count)
+  -- no longer need framework support as the script only supports ox_inventory anyway, may as well just remove item using ox_inventory functions (to follow)
 end
