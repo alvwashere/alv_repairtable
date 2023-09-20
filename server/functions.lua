@@ -1,3 +1,5 @@
+if not ox_inventory then local inventory = exports.ox_inventory end
+
 function GetJob(source)
   if ESX then
     return ESX.GetPlayerFromId(source).getJob().name
@@ -17,7 +19,9 @@ function GetLoadout(source)
 end
 
 function GetItem(source)
-  -- no longer need framework support as the script only support ox_inventory, may as well just return loadout using ox_inventory functions (to follow)
+  local item = ox_inventory:GetItem(source, Config.MetalItem, nil, true)
+
+  return item
 end
 
 function RemoveItem(source, count)
