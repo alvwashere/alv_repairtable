@@ -9,6 +9,7 @@
 <h1 align='center'> Installing this to your server.</h1>
 
 <p align='center'>
+  <strong> Please ensure you install a release version as if it is not, you may get a version that is actively being worked on and may error.</strong><br><br>
   <strong>1.</strong> Download this repository and add the script to your resources folder.<br>
   <strong>2.</strong> Make sure the resource is started in the <code>server.cfg</code>, you can add <code>ensure alv_repairtable</code> if it isn't.<br>
   <strong>3.</strong> Make sure you add the item in the <code>config.lua</code> file to <code>ox_inventory</code>, if you need help with this see below...<br>
