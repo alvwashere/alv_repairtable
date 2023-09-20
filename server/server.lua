@@ -13,15 +13,15 @@ lib.callback.register('alv_repairtable:canUse', function(source, cb)
 end)
 
 lib.callback.register('alv_repairtable:getLoadout', function(source, cb)
-    return GetLoadout(source)
+    return ox_inventory:GetInventoryItems(source)
 end)
 
 lib.callback.register('alv_repairtable:getMetal', function(source, cb)
-    return GetItem(source)
+    return ox_inventory:GetItem(source, Config.MetalItem, nil, true)
 end)
 
 lib.callback.register('alv_repairtable:removeMetal', function(source, count)
-    RemoveItem(source, count)
+    return ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end)
 
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
