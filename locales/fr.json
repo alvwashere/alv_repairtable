@@ -1,0 +1,11 @@
+{
+  "menu_description": "Réparez %s avec %s% de durabilité restante.",
+  "no_weapons": "Vous n'avez aucune arme.",
+  "no_job": "Vous ne pouvez pas utiliser ce tableau car vous n'avez pas le bon travail.",
+  "no_damage": "Cette arme n'a aucun dommage à réparer...",
+  "no_metal": "Vous n'avez pas assez de métal pour réparer cette arme.",
+  "cleaning_weapon": "Arme de nettoyage...",
+  "repairing_weapon": "Réparation d'arme...",
+  "weapon_repaired": "Arme réparée....",
+  "cancelled_repair": "Réparation annulée..."
+}
