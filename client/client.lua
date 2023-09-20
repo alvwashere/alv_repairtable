@@ -1,3 +1,5 @@
+lib.locale()
+
 for k, v in pairs(Config.RepairLocations) do
     local point = lib.points.new({
         coords = v.Location,
@@ -37,7 +39,7 @@ RegisterCommand('repair_bench', function()
 
         for k, v in pairs(loadout) do
             if string.find(v.name, 'WEAPON_') then
-                Weapons[#Weapons+1] = {label=v.label, description='Repair '..v.label..' with '..v.metadata.durability..'% durability left.', args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+                Weapons[#Weapons+1] = {label=v.label, description=locale('menu_description', v.label, v.metadata.durability), args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
             end
         end
 
@@ -46,10 +48,10 @@ RegisterCommand('repair_bench', function()
 
             BeginMenu(Weapons)
         else
-            ESX.ShowNotification('You do not have any weapons.')
+            ESX.ShowNotification(locale('no_weapons'))
         end
     else
-        ESX.ShowNotification('You cannot use this table as you do not have the correct job.')
+        ESX.ShowNotification(locale('no_job'))
     end
 end)
 
