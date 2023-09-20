@@ -24,7 +24,7 @@
 <h1 align='center'> Have a suggestion?.</h1>
 
 <p align='center'>
-  Whether it be as simple as adding a new language to the locales or updating an actual feature within the script, we appreciate all feedback and try to accomodate to all server owners' needs. 
+  Whether it be as simple as adding a new language to the locales or updating an actual feature within the script, we appreciate all feedback and try to accomodate to all server owners' needs. <br>
   Therefore, if you have a suggestion please join the Discord linked below at the bottom of this README file and leave your comment in the suggestions channel. 
 </p>
 
