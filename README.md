@@ -1,6 +1,6 @@
 <h1 align='center'>Alv Repair Table</h1>
 
-<p align='center'>This is a FiveM script that uses <a href='https://github.com/esx-framework/esx_core'>ESX</a>/<a href='https://github.com/qbcore-framework/qb-core'>QBCore</a>/<a href='https://github.com/overextended/ox_core'>OX Core</a> and <a href='https://github.com/overextended/ox_inventory'>OX Inventory</a> to allow players to fix guns by restoring their durability at a crafting bench in exchange for metal.</p>
+<p align='center'>This is a FiveM script that uses <a href='https://github.com/esx-framework/esx_core'>ESX</a>/<a href='https://github.com/qbcore-framework/qb-core'>QBCore</a>/<a href='https://github.com/overextended/ox_core'>OXCore</a> and <a href='https://github.com/overextended/ox_inventory'>OX Inventory</a> to allow players to fix guns by restoring their durability at a crafting bench in exchange for metal.</p>
 
 <p align='center'>The script is heavily configurable and has features such as progress bars, animations & props, etc.</p>
 
