@@ -1,4 +1,4 @@
-if not ox_inventory then local inventory = exports.ox_inventory end
+if not ox_inventory then local ox_inventory = exports.ox_inventory end
 
 function GetJob(source)
   if ESX then
@@ -15,7 +15,7 @@ function GetJob(source)
 end
 
 function GetLoadout(source)
-  -- no longer need framework support as the script only support ox_inventory, may as well just check count using ox_inventory functions (to follow)
+  return ox_inventory:GetInventoryItems(source)
 end
 
 function GetItem(source)
@@ -25,5 +25,5 @@ function GetItem(source)
 end
 
 function RemoveItem(source, count)
-  -- no longer need framework support as the script only supports ox_inventory anyway, may as well just remove item using ox_inventory functions (to follow)
+  ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end
