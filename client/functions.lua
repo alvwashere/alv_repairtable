@@ -25,7 +25,7 @@ end
 
 function CanRepair(durability)
     if durability == 100 then
-        return ESX.ShowNotification('This weapon has no damage to repair.')
+        return ESX.ShowNotification(locale('no_damage')
     else
         local metalCount = lib.callback.await('alv_repairtable:getMetal', false)
 
@@ -39,7 +39,7 @@ function CanRepair(durability)
             end
         end
 
-        return ESX.ShowNotification('You do not have enough metal to repair this gun.')
+        return ESX.ShowNotification(locale('no_metal'))
     end
 end
 
@@ -48,7 +48,7 @@ function BeginRepair(slot)
 
     if lib.progressBar({
         duration = (Config.Duration * 1000)/2,
-        label = 'Repairing Weapon...',
+        label = locale('repairing_weapon'),
         useWhileDead = false,
         canCancel = true,
         disable = {
@@ -61,7 +61,7 @@ function BeginRepair(slot)
     }) then 
         if lib.progressBar({
             duration = (Config.Duration * 1000)/2,
-            label = 'Cleaning Weapon...',
+            label = locale('cleaning_weapon'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -74,13 +74,13 @@ function BeginRepair(slot)
         }) then 
             lib.callback('alv_repairtable:repairGun', cache.serverId, function(success)
                 if success then
-                    ESX.ShowNotification('Weapon Repaired...')
+                    ESX.ShowNotification(locale('weapon_repaired'))
                 end
             end, slot)
         else 
-            ESX.ShowNotification('Cancelled repair...')
+            ESX.ShowNotification(locale('cancelled_repair'))
         end
     else 
-        ESX.ShowNotification('Cancelled repair...')
+        ESX.ShowNotification(locale('cancelled_repair'))
     end
 end
