@@ -1,1 +1,11 @@
-
+{
+  "menu_description": "Repair %s with %s% durability left.",
+  "no_weapons": "You do not have any weapons.",
+  "no_job": "You cannot use this table as you do not have the correct job.",
+  "no_damage": "This weapon has no damage to repair...",
+  "no_metal": "You do not have enough metal to repair this gun.",
+  "cleaning_weapon": "Cleaning Weapon...",
+  "repairing_weapon": "Repairing Weapon...",
+  "weapon_repaired": "Weapon Repaired...",
+  "cancelled_repair": "Cancelled repair..."
+}
