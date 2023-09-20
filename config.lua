@@ -1,7 +1,7 @@
 Config = {}
 
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
-Config.Duration = 600 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
+Config.Duration = 10 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
 
 Config.Framework = {
     Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
@@ -15,12 +15,13 @@ Config.RepairLocations = {
         Jobs = {
             ['mechanic'] = true, -- Job required to operate the table, feel free to add more by adding a new line.
         },
-        RestrictedTo = { -- Remove the table and set this to false to allow every gun on the table
-            ['WEAPON_COMBATPISTOL'] = true,
-            ['WEAPON_CARBINERIFLE'] = true,
-            ['WEAPON_PISTOL'] = true
-        },
     }
+}
+
+Config.RestrictedTo = { -- Remove the table and set this to false to allow every gun on the table
+    ['WEAPON_COMBATPISTOL'] = true,
+    ['WEAPON_CARBINERIFLE'] = true,
+    ['WEAPON_PISTOL'] = true
 }
 
 Config.Repairing = {
