@@ -25,7 +25,7 @@ end
 
 function CanRepair(durability)
     if durability == 100 then
-        return Notify(locale('no_damage')
+        return Notify(locale('no_damage'))
     else
         local metalCount = lib.callback.await('alv_repairtable:getMetal', false)
 
