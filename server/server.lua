@@ -1,11 +1,9 @@
 local ox_inventory = exports.ox_inventory
 
 lib.callback.register('alv_repairtable:canUse', function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-
     for k, v in pairs(Config.RepairLocations) do
         if #(v.Location - GetEntityCoords(GetPlayerPed(source))) < 2.0 then
-            if v.Jobs and type(v.Jobs == 'table') and v.Jobs[xPlayer.getJob().name] then
+            if v.Jobs and type(v.Jobs == 'table') and v.Jobs[GetJob(source)] then
                 return true
             end
         end
@@ -37,8 +35,6 @@ end)
 
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
     if source and slot then
-        local xPlayer = ESX.GetPlayerFromId(source)
-        
         ox_inventory:SetDurability(source, slot, 100)
         return true
     end
