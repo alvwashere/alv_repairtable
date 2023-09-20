@@ -39,7 +39,11 @@ RegisterCommand('repair_bench', function()
 
         for k, v in pairs(loadout) do
             if string.find(v.name, 'WEAPON_') then
-                Weapons[#Weapons+1] = {label=v.label, description=locale('menu_description', v.label, v.metadata.durability), args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+                if Config.RestrictedTo and Config.RestrictedTo[v.name] then
+                    Weapons[#Weapons+1] = {label=v.label, description=locale('menu_description', v.label, v.metadata.durability), args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+                elseif Config.RestrictedTo == false then
+                    Weapons[#Weapons+1] = {label=v.label, description=locale('menu_description', v.label, v.metadata.durability), args={name = v.name, durability=v.metadata.durability, slot=v.slot}}
+                end
             end
         end
 
