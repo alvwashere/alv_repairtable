@@ -39,7 +39,7 @@ function CanRepair(durability)
             end
         end
 
-        return ESX.ShowNotification(locale('no_metal'))
+        return Notify(locale('no_metal'))
     end
 end
 
@@ -74,13 +74,21 @@ function BeginRepair(slot)
         }) then 
             lib.callback('alv_repairtable:repairGun', cache.serverId, function(success)
                 if success then
-                    ESX.ShowNotification(locale('weapon_repaired'))
+                    Notify(locale('weapon_repaired'))
                 end
             end, slot)
         else 
-            ESX.ShowNotification(locale('cancelled_repair'))
+            Notify(locale('cancelled_repair'))
         end
     else 
-        ESX.ShowNotification(locale('cancelled_repair'))
+        Notify(locale('cancelled_repair'))
+    end
+end
+
+function Notify(message)
+    if ESX then
+        ESX.ShowNotification(message)
+    elseif QBCore then
+        QBCore.Funcions.Notify(message)
     end
 end
