@@ -33,6 +33,10 @@ function DiscordLog(webhook, title, message, data)
 
     PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username=userName, avatar_url = avatarUrl, embeds = embed}), {['Content-Type'] = 'application/json'})
   else
-    exports['alv_lib']:SendLog(webhook, title, message)
+    exports['alv_lib']:SendLog(webhook, title, message, {
+      color = Discord.Color,
+      username = Discord.Username,
+      avatarUrl = discord.AvatarURL
+    })
   end
 end)
