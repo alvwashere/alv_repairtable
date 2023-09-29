@@ -1,0 +1,13 @@
+{
+  "menu_description": "Repareer %s met nog %s duurzaamheid over.",
+  "no_weapons": "Je hebt geen wapens.",
+  "no_job": "U kunt deze tabel niet gebruiken omdat u niet de juiste functie heeft.",
+  "no_damage": "Dit wapen heeft geen schade om te repareren...",
+  "no_metal": "Je hebt niet genoeg metaal om dit wapen te repareren.",
+  "cleaning_weapon": "Wapen schoonmaken...",
+  "repairing_weapon": "Wapen repareren...",
+  "weapon_repaired": "Wapen gerepareerd.",
+  "cancelled_repair": "Reparatie geannuleerd...",
+  "not_found": "Niet gevonden",
+  "weapon_repaired_desc": "Naam: %s \nServer-ID: %s \nTwijfel: %s \nWapen: %s"
+}
