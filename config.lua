@@ -4,6 +4,7 @@ Config.CheckVersion = true -- Will let you know in your console if the script is
 
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.Duration = 10 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
+Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
 
 Config.Framework = {
     Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
