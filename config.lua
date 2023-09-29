@@ -1,5 +1,7 @@
 Config = {}
 
+Config.CheckVersion = true -- Will let you know in your console if the script is up to date and will let you know of any changelogs and things that are coming soon. 
+
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.Duration = 10 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
 
