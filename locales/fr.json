@@ -7,5 +7,7 @@
   "cleaning_weapon": "Arme de nettoyage...",
   "repairing_weapon": "Réparation d'arme...",
   "weapon_repaired": "Arme réparée....",
-  "cancelled_repair": "Réparation annulée..."
+  "cancelled_repair": "Réparation annulée...",
+  "not_found": "Pas trouvé",
+  "weapon_repaired_desc": "Nom : %s \nID du serveur : %s \nDiscorde : %s \nArme : %s"
 }
