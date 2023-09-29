@@ -21,6 +21,10 @@ lib.callback.register('alv_repairtable:getMetal', function(source, cb)
     return ox_inventory:GetItem(source, Config.MetalItem, nil, true)
 end)
 
+lib.callback.register('alv_repairtable:chargePlayer', function(source, cb)
+    return ChargePlayer(source, Config.ChargePlayer)
+end)
+
 lib.callback.register('alv_repairtable:removeMetal', function(source, count)
     return ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end)
