@@ -5,7 +5,7 @@ lua54 'yes'
 author 'Alv'
 description 'OX Inventory Repair Table for guns.'
 url 'https://alv.gg'
-version '1.0.4'
+version '1.0.6'
 
 shared_scripts {
     '@ox_lib/init.lua',
