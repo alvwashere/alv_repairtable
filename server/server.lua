@@ -1,4 +1,5 @@
 local ox_inventory = exports.ox_inventory
+lib.locale()
 
 lib.callback.register('alv_repairtable:canUse', function(source, cb)
     for k, v in pairs(Config.RepairLocations) do
@@ -27,6 +28,12 @@ end)
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
     if source and slot then
         ox_inventory:SetDurability(source, slot, 100)
+        if GetPlayerIdentifierByType(source, 'discord') then
+            local Discord = '<@'..string.sub(GetPlayerIdentifierByType(source, 'discord', 9, -1)..'>'
+        else
+            local Discord = locale('not_found')
+        end
+        DiscordLog(Discord.RepairWebhook, GetPlayerName(source), Discord, locale('weapon_repaired'), locale('repaired_desc', ox_inventory:GetSlot(source, slot)))
         return true
     end
 end)
