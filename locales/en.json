@@ -6,6 +6,8 @@
   "no_metal": "You do not have enough metal to repair this gun.",
   "cleaning_weapon": "Cleaning Weapon...",
   "repairing_weapon": "Repairing Weapon...",
-  "weapon_repaired": "Weapon Repaired...",
-  "cancelled_repair": "Cancelled repair..."
+  "weapon_repaired": "Weapon Repaired.",
+  "cancelled_repair": "Cancelled repair...",
+  "not_found": "Not Found",
+  "weapon_repaired_desc": "Name: %s \nServer ID: %s \nDiscord: %s \nWeapon: %s"
 }
