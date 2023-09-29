@@ -1,5 +1,5 @@
 {
-  "menu_description": "Repara %s con %s% de durabilidad restante.",
+  "menu_description": "Repara %s con %s de durabilidad restante.",
   "no_weapons": "No tienes armas.",
   "no_job": "No puede utilizar esta tabla porque no tiene el trabajo correcto.",
   "no_damage": "Esta arma no tiene daños que reparar...",
