@@ -12,6 +12,15 @@ function BeginMenu(weapons)
         options=weapons
     }, function(selected, scrollIndex, args)
         if CanRepair(args.durability) then
+            if Config.ChargePlayer then
+                local charged = lib.callback.await('alv_repairbench:chargePlayer', false)
+
+                if charged then
+                    Notify(locale('paid', Config.ChargePlayer))
+                else
+                    return Notify('not_enough_money')
+                end
+            end
             BeginRepair(args.slot)
         end
     end)
