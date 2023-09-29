@@ -1,0 +1,13 @@
+{
+  "menu_description": "Repariere %s mit verbleibender Haltbarkeit von %s.",
+  "no_weapons": "Du hast keine Waffen.",
+  "no_job": "Sie können diese Tabelle nicht verwenden, da Sie nicht über den richtigen Job verfügen.",
+  "no_damage": "Diese Waffe weist keinen zu reparierenden Schaden auf...",
+  "no_metal": "Sie haben nicht genug Metall, um diese Waffe zu reparieren.",
+  "cleaning_weapon": "Waffe reinigen...",
+  "repairing_weapon": "Waffe reparieren...",
+  "weapon_repaired": "Waffe repariert.",
+  "cancelled_repair": "Reparatur abgebrochen...",
+  "not_found": "Nicht gefunden",
+  "weapon_repaired_desc": "Name: %s \nServer-ID: %s \nDiscord: %s \nWaffe: %s"
+}
