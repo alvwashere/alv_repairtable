@@ -1,0 +1,13 @@
+{
+  "menu_description": "Ripara %s con %s durabilità rimasta.",
+  "no_weapons": "Non hai armi.",
+  "no_job": "Non puoi utilizzare questa tabella perché non hai il lavoro corretto.",
+  "no_damage": "Quest'arma non ha danni da riparare...",
+  "no_metal": "Non hai abbastanza metallo per riparare questa pistola.",
+  "cleaning_weapon": "Pulizia dell'arma...",
+  "repairing_weapon": "Riparazione dell'arma...",
+  "weapon_repaired": "Arma riparata.",
+  "cancelled_repair": "Riparazione annullata...",
+  "not_found": "Non trovato",
+  "weapon_repaired_desc": "Nome: %s \nID server: %s \nDiscord: %s \nArma: %s"
+}
