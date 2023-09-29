@@ -10,5 +10,6 @@
   "cancelled_repair": "Cancelled repair...",
   "not_found": "Not Found",
   "weapon_repaired_desc": "Name: %s \nServer ID: %s \nDiscord: %s \nWeapon: %s",
-  "not_enough_money": "You can not afford to repair this weapon."
+  "not_enough_money": "You can not afford to repair this weapon.",
+  "repair_bench": "Weapons Repair Bench"
 }
