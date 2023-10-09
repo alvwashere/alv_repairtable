@@ -56,7 +56,7 @@ function BeginRepair(slot)
     local slot = slot
 
     if lib.progressBar({
-        duration = (Config.Duration * 1000)/2,
+        duration = (Config.TimeEach * 1000)/2,
         label = locale('repairing_weapon'),
         useWhileDead = false,
         canCancel = true,
@@ -69,7 +69,7 @@ function BeginRepair(slot)
         },
     }) then 
         if lib.progressBar({
-            duration = (Config.Duration * 1000)/2,
+            duration = (Config.TimeEach * 1000)/2,
             label = locale('cleaning_weapon'),
             useWhileDead = false,
             canCancel = true,
