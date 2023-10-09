@@ -20,6 +20,12 @@ server_scripts {
     'server/*.lua'
 }
 
+ui_page 'html/index.html'
+
 files {
-    'locales/*.json'
+    'locales/*.json',
+    'html/img/*.png',
+    'html/index.html',
+    'html/style.css',
+    'html/script.js'
 }
