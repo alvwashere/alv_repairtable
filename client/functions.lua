@@ -1,6 +1,6 @@
 function DebugPrint(msg)
     if Config.DebugPrint then
-        print(msg)
+        return print(msg)
     end
 end
 
