@@ -3,7 +3,6 @@ Config = {}
 Config.CheckVersion = true -- Will let you know in your console if the script is up to date and will let you know of any changelogs and things that are coming soon. 
 
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
-Config.Duration = 10 -- The amount of time it will take to repair weapons in seconds. (Default 5 minutes.)
 Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
 
 Config.Framework = {
@@ -29,7 +28,7 @@ Config.RestrictedTo = { -- Remove the table and set this to false to allow every
 
 Config.Repairing = {
     InstantRepair = false, -- Do you want the weapon to repair instantly? Setting to false will use a progress bar and optional animation.
-    TimeEach = 5, -- How long each stage should take in seconds, default is 5 seconds meaning it takes 10 seconds to repeir a weapon.
+    TimeEach = 150, -- How long each stage should take in seconds, default is 150 seconds meaning it takes 5 minutes to repeir a weapon.
     Fixing = {
         AnimDict = 'anim@heists@prison_heiststation@cop_reactions',
         AnimClip = 'cop_b_idle'
