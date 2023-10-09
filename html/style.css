@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
   width: 100%;
   height: 100%;
+  font-family: Roboto;
+}
+
+#notification {
+  border-radius: 6px;
+  background: rgba(30, 30, 30, 0.6);
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(0, 150, 255);
+  left: 95%;
+  top: 45%;
 }
