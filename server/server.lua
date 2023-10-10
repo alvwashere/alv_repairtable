@@ -33,7 +33,7 @@ lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
     if source and slot then
         ox_inventory:SetDurability(source, slot, 100)
         if GetPlayerIdentifierByType(source, 'discord') then
-            local Discord = '<@'..string.sub(GetPlayerIdentifierByType(source, 'discord', 9, -1)..'>'
+            local Discord = '<@'..string.sub(GetPlayerIdentifierByType(source, 'discord', 9, -1)..'>')
         else
             local Discord = locale('not_found')
         end
