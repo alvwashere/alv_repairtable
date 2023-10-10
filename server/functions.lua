@@ -39,7 +39,7 @@ function DiscordLog(webhook, title, message, data)
       avatarUrl = discord.AvatarURL
     })
   end
-end)
+end
 
 function ChargePlayer(source, amount)
   if ESX then
@@ -55,7 +55,7 @@ function ChargePlayer(source, amount)
     local Player = QBCore.Functions.GetPlayer(source)
 
     if Player.PlayerData.money['cash'] >= amount then
-      Player.Functions.RemoveMoney('cash', amount, locale('repair_bench')
+      Player.Functions.RemoveMoney('cash', amount, locale('repair_bench'))
       return true
     else
       return false
