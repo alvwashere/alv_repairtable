@@ -2,6 +2,7 @@ Config = {}
 
 Config.CheckVersion = true -- Will let you know in your console if the script is up to date and will let you know of any changelogs and things that are coming soon. 
 
+Config.Bind = 'e' -- The key that the repair bench will be binded to, the default and recommended is E.
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
 
@@ -49,8 +50,29 @@ Config.Requirements = { -- The amount of metal required to fix a gun based on it
 }
 
 Config.MenuOptions = {
+    UseMenu = false, -- --[[ OPTIONS: true (will use ox_lib menu), false (will use built-in UI) ]]--
     Title = 'Repair Bench', -- Will show in the menu header.
     Position = 'bottom-right' -- Menu position, read ox_lib docs for more positions.
 }
 
-Config.DebugPrint = false -- Will print data you can use for debugging if you modify the script.
+Config.Notification = 'built-in' --[[ OPTIONS: 'built-in', 'framework', 'print', none ]]--
+function Config.Notify(message)
+    if Config.Notification == 'built-in' then
+        SendNUIMessage({
+            type = 'notification',
+            data = {
+                message = message
+            }
+        })
+    elseif Config.Notification == 'framework' then
+        if ESX then
+            ESX.ShowNotification(message)
+        elseif QBCore then
+            QBCore.Funcions.Notify(message)
+        end
+    elseif Config.Notification == 'print' then
+        print(message)
+    else return end
+end
+
+Config.Debug = true -- Will print data you can use for debugging if you modify the script, also registers some commands that'll help you test stuff. See functions file for more information.
