@@ -52,14 +52,14 @@ RegisterCommand('repair_bench', function()
 
             BeginMenu(Weapons)
         else
-            Notify('no_weapons')
+            Config.Notify(locale('no_weapons'))
         end
     else
-        Notify('no_job')
+        Config.Notify(locale('no_job'))
     end
 end)
 
-RegisterKeyMapping('repair_bench', 'Use a repair bench.', 'keyboard', 'e')
+RegisterKeyMapping('repair_bench', 'Use a repair bench.', 'keyboard', Config.Bind)
 
 AddEventHandler('onResourceStop', function(name)
     if name == GetCurrentResourceName() then
