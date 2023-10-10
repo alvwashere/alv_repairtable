@@ -1,5 +1,5 @@
 function DebugPrint(msg)
-    if Config.DebugPrint then
+    if Config.Debug then
         return print(msg)
     end
 end
@@ -16,9 +16,9 @@ function BeginMenu(weapons)
                 local charged = lib.callback.await('alv_repairbench:chargePlayer', false)
 
                 if charged then
-                    Notify(locale('paid', Config.ChargePlayer))
+                    Config.Notify(locale('paid', Config.ChargePlayer))
                 else
-                    return Notify('not_enough_money')
+                    return Config.Notify(locale('not_enough_money'))
                 end
             end
             BeginRepair(args.slot)
@@ -34,7 +34,7 @@ end
 
 function CanRepair(durability)
     if durability == 100 then
-        return Notify(locale('no_damage'))
+        return Config.Notify(locale('no_damage'))
     else
         local metalCount = lib.callback.await('alv_repairtable:getMetal', false)
 
@@ -48,7 +48,7 @@ function CanRepair(durability)
             end
         end
 
-        return Notify(locale('no_metal'))
+        return Config.Notify(locale('no_metal'))
     end
 end
 
@@ -83,21 +83,53 @@ function BeginRepair(slot)
         }) then 
             lib.callback('alv_repairtable:repairGun', cache.serverId, function(success)
                 if success then
-                    Notify(locale('weapon_repaired'))
+                    Config.Notify(locale('weapon_repaired'))
                 end
             end, slot)
         else 
-            Notify(locale('cancelled_repair'))
+            Config.Notify(locale('cancelled_repair'))
         end
     else 
-        Notify(locale('cancelled_repair'))
+        Config.Notify(locale('cancelled_repair'))
     end
 end
 
-function Notify(message)
-    if ESX then
-        ESX.ShowNotification(message)
-    elseif QBCore then
-        QBCore.Funcions.Notify(message)
-    end
+if Config.Debug then
+    RegisterCommand('test_noti', function()
+        SendNUIMessage({
+            type = 'notification',
+            data = {
+                message = 'Test Notification'
+            }
+        })
+    end)
+
+    RegisterCommand('test_ui', function()
+        if not LocalPlayer.state.usingTable then
+            SendNUIMessage({
+                type = 'openui', 
+                data = {
+                    title = 'Repair Bench - Grove Street',
+                    weapons = {
+                        {
+                            label = 'Pistol',
+                            name = 'WEAPON_PISTOL', 
+                            durability = 17.38
+                        },
+                        {
+                            label = 'AP Pistol',
+                            name = 'WEAPON_APPISTOL', 
+                            durability = 19.21
+                        }
+                    } 
+                }
+            })
+            LocalPlayer.state.usingTable = true
+        else
+            SendNUIMessage({
+                type = 'closeui'
+            })
+            LocalPlayer.state.usingTable = false
+        end
+    end)
 end
