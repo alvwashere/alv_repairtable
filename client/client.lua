@@ -21,10 +21,12 @@ end
 RegisterCommand('repair_bench', function()
     local failAttempts = 0
     local Weapons = {}
+    local location = nil
 
     for k, v in pairs(Config.RepairLocations) do
         if #(GetEntityCoords(cache.ped) - v.Location) > 3.0 then
             failAttempts = failAttempts + 1
+            location = v.Label
 
             if failAttempts >= #Config.RepairLocations then
                 return
@@ -50,7 +52,7 @@ RegisterCommand('repair_bench', function()
         if #Weapons > 0 then
             DebugPrint(json.encode(Weapons, {indent=true}))
 
-            BeginMenu(Weapons)
+            BeginMenu(Weapons, location)
         else
             Config.Notify(locale('no_weapons'))
         end
