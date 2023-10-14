@@ -4,31 +4,50 @@ function DebugPrint(msg)
     end
 end
 
-function BeginMenu(weapons)
-    lib.registerMenu({
-        id='repair_bench',
-        title=Config.MenuOptions.Title, 
-        position=Config.MenuOptions.Position,
-        options=weapons
-    }, function(selected, scrollIndex, args)
-        if CanRepair(args.durability) then
-            if Config.ChargePlayer then
-                local charged = lib.callback.await('alv_repairbench:chargePlayer', false)
+function BeginMenu(weapons, location)
+    if Config.MenuOptions.UseMenu then
+        lib.registerMenu({
+            id='repair_bench',
+            title=Config.MenuOptions.Title, 
+            position=Config.MenuOptions.Position,
+            options=weapons
+        }, function(selected, scrollIndex, args)
+            if CanRepair(args.durability) then
+                if Config.ChargePlayer then
+                    local charged = lib.callback.await('alv_repairbench:chargePlayer', false)
 
-                if charged then
-                    Config.Notify(locale('paid', Config.ChargePlayer))
-                else
-                    return Config.Notify(locale('not_enough_money'))
+                    if charged then
+                        Config.Notify(locale('paid', Config.ChargePlayer))
+                    else
+                        return Config.Notify(locale('not_enough_money'))
+                    end
                 end
+                BeginRepair(args.slot)
             end
-            BeginRepair(args.slot)
+        end)
+
+        Wait(100)
+
+        if not lib.getOpenMenu() then
+            lib.showMenu('repair_bench')
         end
-    end)
+    else
+        Options = {}
 
-    Wait(100)
+        for k, v in pairs(weapons) do
+            if type(v) == 'table' then
+                Options[#Options+1] = {label = v.label, slot = v.args.slot, durability = v.args.durability}
+            end
+        end
 
-    if not lib.getOpenMenu() then
-        lib.showMenu('repair_bench')
+        SendNUIMessage({
+            type = 'openui', 
+            data = {
+                title = 'Repair Bench - Grove Street',
+                weapons = Options
+            }
+        })
+        SetNuiFocus(true, true)
     end
 end
 
@@ -54,6 +73,7 @@ end
 
 function BeginRepair(slot)
     local slot = slot
+    print('1')
 
     if lib.progressBar({
         duration = (Config.Repairing.TimeEach * 1000)/2,
@@ -67,7 +87,7 @@ function BeginRepair(slot)
             dict = Config.Repairing.Fixing.AnimDict,
             clip = Config.Repairing.Fixing.AnimClip
         },
-    }) then 
+    }) then print('2')
         if lib.progressBar({
             duration = (Config.Repairing.TimeEach * 1000)/2,
             label = locale('cleaning_weapon'),
@@ -99,7 +119,8 @@ if Config.Debug then
         SendNUIMessage({
             type = 'notification',
             data = {
-                message = 'Test Notification'
+                message = 'Test Notification',
+                time = 5000,
             }
         })
     end)
@@ -113,23 +134,38 @@ if Config.Debug then
                     weapons = {
                         {
                             label = 'Pistol',
-                            name = 'WEAPON_PISTOL', 
+                            slot = 1, 
                             durability = 17.38
                         },
                         {
                             label = 'AP Pistol',
-                            name = 'WEAPON_APPISTOL', 
+                            slot = 2, 
                             durability = 19.21
                         }
                     } 
                 }
             })
+            SetNuiFocus(true, true)
             LocalPlayer.state.usingTable = true
         else
             SendNUIMessage({
                 type = 'closeui'
             })
+            SetNuiFocus(false, false)
             LocalPlayer.state.usingTable = false
         end
     end)
 end
+
+RegisterNUICallback('CloseMenu', function()
+    LocalPlayer.state.usingTable = false
+    SetNuiFocus(false, false)
+end)
+
+RegisterNUICallback('BeginRepair', function(data, cb) 
+    local durability = lib.callback.await('alv_repairbench:getDurability', false, data.slot)
+
+    if CanRepair(durability) then
+        BeginRepair(data.slot)
+    end
+end)
