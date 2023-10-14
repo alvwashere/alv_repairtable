@@ -26,18 +26,35 @@ lib.callback.register('alv_repairtable:chargePlayer', function(source, cb)
 end)
 
 lib.callback.register('alv_repairtable:removeMetal', function(source, count)
+    print(source, count)
     return ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end)
 
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
     if source and slot then
+        local slot = tonumber(slot)
         ox_inventory:SetDurability(source, slot, 100)
         if GetPlayerIdentifierByType(source, 'discord') then
-            local Discord = '<@'..string.sub(GetPlayerIdentifierByType(source, 'discord', 9, -1)..'>')
+            local DiscordName = '<@'..string.sub(GetPlayerIdentifierByType(source, 'discord'), 9, -1)..'>'
         else
-            local Discord = locale('not_found')
+            local DiscordName = locale('not_found')
         end
-        DiscordLog(Discord.RepairWebhook, GetPlayerName(source), Discord, locale('weapon_repaired'), locale('repaired_desc', ox_inventory:GetSlot(source, slot)))
+        DiscordLog(Discord.RepairWebhook, GetPlayerName(source), DiscordName, locale('weapon_repaired'), locale('repaired_desc', ox_inventory:GetSlot(source, slot)))
         return true
+    end
+end)
+
+
+lib.callback.register('alv_repairbench:getDurability', function(source, slot, cb)
+    if source and slot then
+        local slot = tonumber(slot)
+
+        local items = ox_inventory:GetInventoryItems(source)
+
+        for k, v in pairs(items) do
+            if v.slot == slot then
+                return v.metadata.durability
+            end
+        end
     end
 end)
