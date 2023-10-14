@@ -29,7 +29,7 @@ Config.RestrictedTo = { -- Remove the table and set this to false to allow every
 
 Config.Repairing = {
     InstantRepair = false, -- Do you want the weapon to repair instantly? Setting to false will use a progress bar and optional animation.
-    TimeEach = 150, -- How long each stage should take in seconds, default is 150 seconds meaning it takes 5 minutes to repeir a weapon.
+    TimeEach = 5, -- How long each stage should take in seconds, default is 150 seconds meaning it takes 5 minutes to repeir a weapon.
     Fixing = {
         AnimDict = 'anim@heists@prison_heiststation@cop_reactions',
         AnimClip = 'cop_b_idle'
@@ -41,6 +41,7 @@ Config.Repairing = {
 }
 
 Config.Requirements = { -- The amount of metal required to fix a gun based on its durability.
+    [99.9] = 1,
     [75] = 3,
     [50] = 6,
     [25] = 9,
@@ -61,7 +62,8 @@ function Config.Notify(message)
         SendNUIMessage({
             type = 'notification',
             data = {
-                message = message
+                message = message,
+                time = 5000,
             }
         })
     elseif Config.Notification == 'framework' then
@@ -75,4 +77,4 @@ function Config.Notify(message)
     else return end
 end
 
-Config.Debug = true -- Will print data you can use for debugging if you modify the script, also registers some commands that'll help you test stuff. See functions file for more information.
+Config.Debug = false -- Will print data you can use for debugging if you modify the script, also registers some commands that'll help you test stuff. See functions file for more information.
