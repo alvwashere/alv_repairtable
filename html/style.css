@@ -39,10 +39,49 @@ body {
   translate: calc(50%, -50%);
   width: 40%;
   height: 60%;
-  border: 2px solid black;
-  background: linear-gradient(145deg, rgba(0, 0, 0, .8) 0%, rgba(255, 0, 0, 0.575) 100%);
+  border: none;
+  border-bottom: 3px solid red;
+  border-top: 3px solid red;
+  background: url('https://cdn.steamstatic.com/steamcommunity/public/images/items/691320/f25982e19fd4d1d674b434f546548d3cdf96e936.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   border-radius: 20px;
   color: white;
   font-size: 20px;
-  text-decoration: underline;
+  user-select: none;
+}
+
+#ui_weapons button {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 6px;
+  border: none;
+  width: 25%;
+  height: 7%;
+  font-size: 17px;
+  border-bottom: 2px solid red;
+  background: rgba(100, 100, 100, 0.6);
+  border-radius: 6px;
+  color: white;
+}
+
+#ui_weapons button:hover {
+  cursor: pointer;
+}
+
+#close-button {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  width: 5%;
+  height: 6%;
+}
+
+#close-button:hover {
+  cursor: pointer;
 }
