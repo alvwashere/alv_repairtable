@@ -36,31 +36,7 @@ function DiscordLog(webhook, title, message, data)
     exports['alv_lib']:SendLog(webhook, title, message, {
       color = Discord.Color,
       username = Discord.Username,
-      avatarUrl = discord.AvatarURL
+      avatarUrl = Discord.AvatarURL
     })
-  end
-end
-
-function ChargePlayer(source, amount)
-  if ESX then
-    local xPlayer = ESX.GetPlayerFromId(source)
-
-    if xPlayer.getMoney() >= amount then
-      xPlayer.removeMoney(amount)
-      return true
-    else
-      return false
-    end
-  elseif QBCore then
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    if Player.PlayerData.money['cash'] >= amount then
-      Player.Functions.RemoveMoney('cash', amount, locale('repair_bench'))
-      return true
-    else
-      return false
-    end
-  elseif OX then
-    print('^6[ALV-GG]^0 OX Core does not currently have a documented money system. This function will be updated when the framework adds one.')
   end
 end
