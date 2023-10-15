@@ -5,10 +5,20 @@ window.addEventListener('message', function(event) {
     var notification = document.getElementById('notification');
 
     notification.style.display = 'block';
+    notification.style.opacity = 1.0;
     notification.innerHTML = event.data.data.message;
 
-    sleep(event.data.time).then(() => {
-      notification.style.display = 'none';
+    sleep(event.data.data.time).then(() => {
+      notification.style.opacity = 0.75;
+      sleep(333).then(() => {
+        notification.style.opacity = 0.5;
+        sleep(333).then(() => {
+          notification.style.opacity = 0.25;
+          sleep(333).then(() => {
+            notification.style.display = 'none';
+          })
+        })
+      })
     });
   } else if (event.data.type === 'openui') {
     if (event.data.data.weapons) {
