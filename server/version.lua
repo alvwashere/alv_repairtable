@@ -20,7 +20,6 @@ CreateThread( function()
 ^6[ALV-GG]^0 Repair Table Script Loaded
 ^6[ALV-GG]^0 The system is ^2NOT^0 up to date.
 ^6[ALV-GG]^0 Changelog: ^4%s ^0
-^6[ALV-GG]^0 Please update here: ^1https://github.com/alvwashere/alv_repairtable/releases^0.
 ]]):format(rv.version, rv.changelog))
         else
           print(([[
