@@ -4,7 +4,7 @@
 
 <p align='center'>The script is heavily configurable and has features such as progress bars, animations & props, etc.</p>
 
-<p align='center'>Script Preview: <a href='https://www.youtube.com/@alvfivem'>Coming Soon - feel free to subscribe to my YouTube though.</a></p>
+<p align='center'>Script Preview: <a href='https://www.youtube.com/watch?v=GInIUvLqdZM'>Alv.gg YouTube</a></p>
 
 <h1 align='center'> Installing this to your server.</h1>
 
