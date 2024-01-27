@@ -15,10 +15,10 @@ Config.Framework = {
 
 Config.RepairLocations = {
     [1] = {
-        Location = vec3(-97.6829, -1791.9990, 26.9096), -- The coordinates for the bench (vector3)
-        Label = 'Grove Street Customs Bench', -- Label for the location you're at.
+        Location = vec3(487.2350, -997.0225, 30.6898), -- The coordinates for the bench (vector3)
+        Label = 'LSPD Armory', -- Label for the location you're at.
         Jobs = {
-            ['mechanic'] = true, -- Job required to operate the table, feel free to add more by adding a new line.
+            ['police'] = true, -- Job required to operate the table, feel free to add more by adding a new line.
         },
     }
 }
@@ -28,6 +28,12 @@ Config.RestrictedTo = { -- Remove the table and set this to false to allow every
     ['WEAPON_CARBINERIFLE'] = true,
     ['WEAPON_PISTOL'] = true
 }
+
+-- EXAMPLE TO ALLOW ALL GUNS BELOW. REPLACE LINES 26-30 WITH THIS IF THATS WHAT YOU WANT.
+
+--[[
+Config.RestrictedTo = {}
+]]
 
 Config.Repairing = {
     InstantRepair = false, -- Do you want the weapon to repair instantly? Setting to false will use a progress bar and optional animation.
