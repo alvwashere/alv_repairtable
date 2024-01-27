@@ -11,5 +11,10 @@
   "not_found": "Not Found",
   "weapon_repaired_desc": "Name: %s \nServer ID: %s \nDiscord: %s \nWeapon: %s",
   "not_enough_money": "You can not afford to repair this weapon.",
-  "repair_bench": "Weapons Repair Bench"
+  "repair_bench": "Weapons Repair Bench",
+  "no_metal_placing": "You need scrap metal to place the table...",
+  "no_job_placing": "You cannot place a table as you do not have the correct job...",
+  "use_repair_bench": "Use Repair Bench",
+  "pick_bench_up": "Pick Bench Up",
+  "weapons_menu_title": "Weapons Repair Bench"
 }
