@@ -29,6 +29,21 @@ lib.callback.register('alv_repairtable:removeMetal', function(source, count)
     return ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end)
 
+lib.callback.register('alv_repairtable:returnTable', function(source, count)
+    ox_inventory:RemoveItem(source, 'gun_table', 1)
+    return true
+end)
+
+lib.callback.register('alv_repairtable:takeTable', function(source, type)    
+    if type == 'pickup' then
+        ox_inventory:AddItem(source, 'gun_table', 1)
+        return true
+    elseif type == 'place' then
+        ox_inventory:RemoveItem(source, 'gun_table', 1)
+        return true
+    end
+end)
+
 lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
     if source and slot then
         local slot = tonumber(slot)
