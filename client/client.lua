@@ -7,13 +7,33 @@ for k, v in pairs(Config.RepairLocations) do
         dunak = v.Label,
     })
 
-    function point:nearby()
-        DrawMarker(2, v.Location, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.25, 0.15, 200, 30, 30, 200, false, true, 2, nil, nil, false)
+    if Config.DrawMarker then
+        function point:nearby()
+            DrawMarker(2, v.Location, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.25, 0.15, 200, 30, 30, 200, false, true, 2, nil, nil, false)
+        end
+    end
+
+    if Config.Framework.Target then
+        repair_bench_target = exports.ox_target:addSphereZone({
+            coords = v.Location,
+            radius = 1.0,
+            debug = Config.Debug,
+            options = {
+                name = 'alv_repairbench', 
+                command = 'repair_bench', 
+                icon = 'fa-solid fa-gun',
+                label = v.Label
+            }
+        })
     end
 
     function point:onExit()
         if lib.getOpenMenu() == 'repair_bench' then
             lib.hideMenu()
+        end
+
+        if Config.Framework.Target then
+            exports.ox_target:removeZone(repair_bench_target)
         end
     end
 end
