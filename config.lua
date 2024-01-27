@@ -2,21 +2,28 @@ Config = {}
 
 Config.CheckVersion = true -- Will let you know in your console if the script is up to date and will let you know of any changelogs and things that are coming soon. 
 
-Config.Bind = 'e' -- The key that the repair bench will be binded to, the default and recommended is E.
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
 Config.DrawMarker = false -- You may want to disable this if using third-eye (target). 
 
+Config.KeyMapping = {
+    Enabled = false, -- You'll want to disable keybinds if you're using the third eye.
+    Description = 'Use a repair bench.', -- Description that will show in the FiveM keybind settings.
+    Keybind = 'e'  -- The key that the repair bench will be binded to, the default and recommended is E.
+}
+
 Config.Framework = {
     Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
     Name = 'es_extended', --[[ Name of your frameworks core resource for the export. ]]--
-    Target = GetResourceState('ox_target')~='missing' -- Will determine if you have ox_target, but you can set this to false to completely disable.
+    Target = GetResourceState('ox_target')~='missing', -- Will determine if you have ox_target, but you can set this to false to completely disable.
+    Radius = 1.0, -- The radius for the target, if enabled. 
+    Icon = 'fa-solid fa-gun', -- Icon that will appear on the target.
 }
 
 Config.RepairLocations = {
     [1] = {
-        Location = vec3(487.2350, -997.0225, 30.6898), -- The coordinates for the bench (vector3)
-        Label = 'LSPD Armory', -- Label for the location you're at.
+        Location = vec3(487.8550, -997.0225, 30.5), -- The coordinates for the bench (vector3)
+        Label = 'LSPD Repair Bench', -- Label for the location you're at.
         Jobs = {
             ['police'] = true, -- Job required to operate the table, feel free to add more by adding a new line.
         },
@@ -59,7 +66,7 @@ Config.Requirements = { -- The amount of metal required to fix a gun based on it
 }
 
 Config.MenuOptions = {
-    UseMenu = false, -- --[[ OPTIONS: true (will use ox_lib menu), false (will use built-in UI) ]]--
+    UseMenu = true, -- --[[ OPTIONS: true (will use ox_lib menu), false (will use built-in UI) ]]--
     Title = 'Repair Bench', -- Will show in the menu header.
     Position = 'bottom-right' -- Menu position, read ox_lib docs for more positions.
 }
