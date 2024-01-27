@@ -13,15 +13,6 @@ function BeginMenu(weapons, location)
             options=weapons
         }, function(selected, scrollIndex, args)
             if CanRepair(args.durability) then
-                if Config.ChargePlayer then
-                    local charged = lib.callback.await('alv_repairbench:chargePlayer', false)
-
-                    if charged then
-                        Config.Notify(locale('paid', Config.ChargePlayer))
-                    else
-                        return Config.Notify(locale('not_enough_money'))
-                    end
-                end
                 BeginRepair(args.slot)
             end
         end)
@@ -43,7 +34,7 @@ function BeginMenu(weapons, location)
         SendNUIMessage({
             type = 'openui', 
             data = {
-                title = 'Repair Bench - Grove Street',
+                title = 'Weapons Repair Bench',
                 weapons = Options
             }
         })
@@ -130,7 +121,7 @@ if Config.Debug then
             SendNUIMessage({
                 type = 'openui', 
                 data = {
-                    title = 'Repair Bench - Grove Street',
+                    title = 'Repair Bench',
                     weapons = {
                         {
                             label = 'Pistol',
