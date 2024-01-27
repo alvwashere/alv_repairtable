@@ -12,6 +12,20 @@ function GetJob(source)
   end
 end
 
+function ChargePlayer(source, amount)
+  if ESX then
+    local xPlayer = ESX.GetPlayerFromId(source)
+
+    xPlayer.removeMoney(amount)
+  elseif QBCore then
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    Player.Functions.RemoveMoney(amount)
+  elseif Ox then
+    -- No money support for Ox setup at current date.
+  end
+end
+
 function DiscordLog(webhook, title, message, data)
   if GetResourceState('alv_lib') == 'missing' then
     local color, userName, avatarUrl
