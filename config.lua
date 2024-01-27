@@ -9,6 +9,7 @@ Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapon
 Config.Framework = {
     Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
     Name = 'es_extended', --[[ Name of your frameworks core resource for the export. ]]--
+    Target = GetResourceState('ox_target')~='missing' -- Will determine if you have ox_target, but you can set this to false to completely disable.
 }
 
 Config.RepairLocations = {
