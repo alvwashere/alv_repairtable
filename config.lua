@@ -5,6 +5,14 @@ Config.CheckVersion = true -- Will let you know in your console if the script is
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
 Config.DrawMarker = false -- You may want to disable this if using third-eye (target). 
+Config.Command = true -- If you want to use Key Mapping, Pressing E, etc. THIS MUST BE ENABLED....
+
+Config.TableItem = {
+    Prop = 'prop_tool_bench02', -- The table prop that will be placed...
+    RequireMetalToPlace = true, -- Enabling this requires the player to have the MetalItem to place.
+    Job = false, -- Replace false with a job if you want only specific jobs to place a table.
+    TakeOnUse = true,
+}
 
 Config.KeyMapping = {
     Enabled = false, -- You'll want to disable keybinds if you're using the third eye.
@@ -66,7 +74,7 @@ Config.Requirements = { -- The amount of metal required to fix a gun based on it
 }
 
 Config.MenuOptions = {
-    UseMenu = true, -- --[[ OPTIONS: true (will use ox_lib menu), false (will use built-in UI) ]]--
+    UseMenu = false, -- --[[ OPTIONS: true (will use ox_lib menu), false (will use built-in UI) ]]--
     Title = 'Repair Bench', -- Will show in the menu header.
     Position = 'bottom-right' -- Menu position, read ox_lib docs for more positions.
 }
