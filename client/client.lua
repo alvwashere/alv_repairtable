@@ -14,17 +14,21 @@ for k, v in pairs(Config.RepairLocations) do
     end
 
     if Config.Framework.Target then
-        repair_bench_target = exports.ox_target:addSphereZone({
-            coords = v.Location,
-            radius = 1.0,
-            debug = Config.Debug,
-            options = {
-                name = 'alv_repairbench', 
-                command = 'repair_bench', 
-                icon = 'fa-solid fa-gun',
-                label = v.Label
-            }
-        })
+        function point:onEnter()
+            repair_bench_target = exports.ox_target:addSphereZone({
+                coords = v.Location,
+                radius = Config.Framework.Radius,
+                debug=Config.Debug,
+                options = {
+                    {
+                        name = 'alv_repairbench',
+                        command = 'repair_bench',
+                        icon = Config.Framework.Icon,
+                        label = v.Label,
+                    }
+                }
+            })
+        end
     end
 
     function point:onExit()
@@ -81,7 +85,9 @@ RegisterCommand('repair_bench', function()
     end
 end)
 
-RegisterKeyMapping('repair_bench', 'Use a repair bench.', 'keyboard', Config.Bind)
+if Config.KeyMapping.Enabled then
+    RegisterKeyMapping('repair_bench', Config.KeyMapping.Description, 'keyboard', Config.Keymapping.Keybind)
+end
 
 AddEventHandler('onResourceStop', function(name)
     if name == GetCurrentResourceName() then
