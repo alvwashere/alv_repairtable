@@ -5,6 +5,7 @@ Config.CheckVersion = true -- Will let you know in your console if the script is
 Config.Bind = 'e' -- The key that the repair bench will be binded to, the default and recommended is E.
 Config.MetalItem = 'scrapmetal' -- The item required to repair weapons.
 Config.ChargePlayer = 5000 -- Set this to false to make it free to repair weapons. 
+Config.DrawMarker = false -- You may want to disable this if using third-eye (target). 
 
 Config.Framework = {
     Type = 'auto', --[[ Options: 'auto', 'esx', 'qb', 'ox' ]]--
