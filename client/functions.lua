@@ -34,7 +34,7 @@ function BeginMenu(weapons, location)
         SendNUIMessage({
             type = 'openui', 
             data = {
-                title = 'Weapons Repair Bench',
+                title = locale('weapons_menu_title'),
                 weapons = Options
             }
         })
@@ -64,7 +64,6 @@ end
 
 function BeginRepair(slot)
     local slot = slot
-    print('1')
 
     if lib.progressBar({
         duration = (Config.Repairing.TimeEach * 1000)/2,
@@ -78,7 +77,7 @@ function BeginRepair(slot)
             dict = Config.Repairing.Fixing.AnimDict,
             clip = Config.Repairing.Fixing.AnimClip
         },
-    }) then print('2')
+    }) then 
         if lib.progressBar({
             duration = (Config.Repairing.TimeEach * 1000)/2,
             label = locale('cleaning_weapon'),
