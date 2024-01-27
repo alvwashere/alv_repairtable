@@ -26,7 +26,6 @@ lib.callback.register('alv_repairtable:chargePlayer', function(source, cb)
 end)
 
 lib.callback.register('alv_repairtable:removeMetal', function(source, count)
-    print(source, count)
     return ox_inventory:RemoveItem(source, Config.MetalItem, count)
 end)
 
@@ -40,6 +39,10 @@ lib.callback.register('alv_repairtable:repairGun', function(source, slot, cb)
             local DiscordName = locale('not_found')
         end
         DiscordLog(Discord.RepairWebhook, GetPlayerName(source), DiscordName, locale('weapon_repaired'), locale('repaired_desc', ox_inventory:GetSlot(source, slot)))
+
+        if Config.ChargePlayer then
+            ChargePlayer(source, Config.ChargePlayer)
+        end
         return true
     end
 end)
