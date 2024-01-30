@@ -163,6 +163,9 @@ RegisterNetEvent('alv_repairtable:placeTable', function()
 
                         if Config.TableItem.TakeOnUse then
                             lib.callback.await('alv_repairtable:takeTable', false, 'pickup')
+
+                            exports.ox_target:removeZone(portable_table)
+                            table_point = nil
                         end
                     end
                 },
