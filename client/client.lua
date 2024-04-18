@@ -96,7 +96,7 @@ if Config.Command and Config.KeyMapping.Enabled then
 end
 
 if Config.KeyMapping.Enabled then
-    RegisterKeyMapping('repair_bench', Config.KeyMapping.Description, 'keyboard', Config.Keymapping.Keybind)
+    RegisterKeyMapping('repair_bench', Config.KeyMapping.Description, 'keyboard', Config.KeyMapping.Keybind)
 end
 
 RegisterNetEvent('alv_repairtable:placeTable', function()
