@@ -1,0 +1,20 @@
+{
+  "menu_description": "修理 %s，剩余耐久度 %s。",
+  "no_weapons": "你没有任何武器。",
+  "no_job": "你不能使用这个工作台，因为你没有正确的工作。",
+  "no_damage": "这个武器没有损坏需要修理...",
+  "no_metal": "你没有足够的金属来修理这把枪。",
+  "cleaning_weapon": "正在清洁武器...",
+  "repairing_weapon": "正在修理武器...",
+  "weapon_repaired": "武器已修理。",
+  "cancelled_repair": "取消修理...",
+  "not_found": "未找到",
+  "weapon_repaired_desc": "名称: %s \n服务器ID: %s \nDiscord: %s \n武器: %s",
+  "not_enough_money": "你没有足够的钱来修理这把武器。",
+  "repair_bench": "武器修理台",
+  "no_metal_placing": "你需要废金属来放置工作台...",
+  "no_job_placing": "你不能放置工作台，因为你没有正确的工作...",
+  "use_repair_bench": "使用修理台",
+  "pick_bench_up": "收起工作台",
+  "weapons_menu_title": "武器修理台"
+}
